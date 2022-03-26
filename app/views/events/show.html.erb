@@ -1,5 +1,5 @@
 <h1><%= @event.title %></h1>
 
-<p>Host: @event.creator.email
+<p>Host: <%= link_to @event.creator.email, "/users/#{@event.creator_id}" %></p>
 <p>Location: <%= @event.location %></p>
 <p>Date: <%= @event.date %></p>
