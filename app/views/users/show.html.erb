@@ -1,6 +1,6 @@
-<h1><%= @user.email %></h1>
+<h1><%= @user.name %></h1>
 
-<h2>Events <%= @user.email %> is hosting</h2>
+<h2>Events <%= @user.name %> is hosting</h2>
 
 <% @user.events.each do |event| %>
   <div style="border-style: solid; margin-bottom: 10px">
@@ -10,7 +10,7 @@
   </div>
 <% end %>
 
-<h2>Events <%= @user.email %> is attending</h2>
+<h2>Events <%= @user.name %> is attending</h2>
 
 <% @user.invitations.includes(:event).each do |invite| %>
   <div style="border-style: solid; margin-bottom: 10px">
