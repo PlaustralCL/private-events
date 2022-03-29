@@ -9,3 +9,14 @@
     <p>Date: <%= event.date %></p>
   </div>
 <% end %>
+
+<h2>Events <%= @user.email %> is attending</h2>
+
+<% @user.invitations.includes(:event).each do |invite| %>
+  <div style="border-style: solid; margin-bottom: 10px">
+    <p>Title: <%= invite.event.title %></p>
+    <p>Location: <%= invite.event.location %></p>
+    <p>Date: <%= invite.event.date %></p>
+  </div>
+
+<% end %>

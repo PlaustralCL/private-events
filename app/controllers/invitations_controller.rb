@@ -7,7 +7,7 @@ class InvitationsController < ApplicationController
     @invitation = Invitation.new(invitation_params)
 
     if @invitation.save
-      redirect_to root_path
+      redirect_to "/events/#{@invitation.event_id}"
     else
       render :new
     end

@@ -9,6 +9,6 @@
 <p>Attendees:</p>
 <% @event.attendees.each do |attendee| %>
   <ul>
-    <li><%= attendee.email %></li>
+    <li><%= link_to attendee.email, "/users/#{attendee.id}" %></li>
   </ul>
 <% end %>
