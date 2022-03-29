@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: %i[index show]
+  resources :invitations, except: :index
   root "events#index"
 
   resources :events
