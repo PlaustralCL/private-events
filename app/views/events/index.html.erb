@@ -2,11 +2,17 @@
   The time is now
 </div>
 
-<ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= link_to event.title, event %>
-    </li>
-  <% end %>
-
-</ul>
+<div class="section">
+  <div class="container">
+    <h2>Up coming events</h2>
+    <div class="card-container">
+      <% @events.each do |event| %>
+        <div class="card">
+          <p class="card__header"><%= link_to event.title, event %></p>
+            <p><%= event.location %></p>
+            <p><%= event.date %></p>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
