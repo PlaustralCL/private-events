@@ -47,7 +47,6 @@ html, body {
 }
 
 .hero {
-  background: no-repeat center/100% url("crowd.jpg");
   color: white;
   font-size: 4rem;
   min-height: 20vh;
