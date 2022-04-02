@@ -16,33 +16,35 @@
 
     <nav class="navbar">
       <div class="navbar__left">
-        <ul>
-          <li class="navbar__logo">
-            <%= link_to "Events!",
-                        root_path %>
-          </li>
-        </ul>
+        <div class="navbar__logo">
+          <%= link_to "Events!",
+                      root_path %>
+        </div>
       </div>
       <div class="navbar__right">
         <% if user_signed_in? %>
-          <ul>
-            <li class="navbar__item">
-              <%= link_to current_user.name,
-                          current_user %>
-            </li>
-            <li class="navbar__item">
-              <%= link_to "Log out",
-                          destroy_user_session_path,
-                          method: :delete %>
-            </li>
-            <li class="navbar__item">
-              <%= link_to "New Event",
-                          new_event_path %>
-            </li>
-          </ul>
+          <div class="navbar__item">
+            <%= link_to current_user.name,
+                        current_user %>
+          </div>
+          <div class="navbar__item">
+            <%= link_to "Log out",
+                        destroy_user_session_path,
+                        method: :delete %>
+          </div>
+          <div class="navbar__item">
+            <%= link_to "New Event",
+                        new_event_path %>
+          </div>
         <% else %>
-          <%= link_to "Log in", new_user_session_path %> |
-          <%= link_to "Sign up", new_user_registration_path %>
+          <div class="navbar__item">
+            <%= link_to "Log in",
+                        new_user_session_path %>
+          </div>
+          <div class="navbar__item">
+            <%= link_to "Sign up",
+                        new_user_registration_path %>
+          </div>
         <% end %>
       </div>
     </nav>

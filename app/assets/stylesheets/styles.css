@@ -47,11 +47,13 @@ html, body {
 }
 
 .hero {
+  align-items: center;
   color: white;
+  display: flex;
   font-size: 4rem;
+  font-weight: bold;
+  justify-content: center;
   min-height: 20vh;
-  padding: 1rem;
-  text-align: center;
 }
 
 @media (min-width: 760px) {
@@ -82,6 +84,10 @@ html, body {
   height: 100%;
 }
 
+.navbar__right:hover {
+  border-top: 4px solid #fff;
+}
+
 .navbar__item,
 .navbar__logo {
   padding: 0.5rem 0.75rem;
@@ -93,15 +99,6 @@ html, body {
 
 .navbar__logo a:hover {
   color: orangered;
-}
-
-.navbar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.navbar li {
-  display: inline;
 }
 
 .navbar a {
