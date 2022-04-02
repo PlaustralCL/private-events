@@ -29,6 +29,12 @@ html, body {
   }
 }
 
+@media (min-width: 1216px) {
+  .container {
+    max-width: 1152px;
+  }
+}
+
 .card-container {
   display: flex;
   flex-direction: row;
@@ -38,12 +44,6 @@ html, body {
   margin: 0 auto;
   position: reliative;
   width: auto;
-}
-
-@media (min-width: 1024px) {
-  .card-container {
-    max-width: 960px;
-  }
 }
 
 .hero {
