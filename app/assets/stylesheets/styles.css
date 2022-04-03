@@ -21,6 +21,7 @@ html, body {
   margin: 0 auto;
   position: reliative;
   width: auto;
+  border: 1px solid red;
 }
 
 @media (min-width: 1024px) {
@@ -65,6 +66,7 @@ html, body {
 /**** Components ****/
 .navbar {
   align-items: center;
+  background-color: orangered;
   display: flex;
   justify-content: space-between;
   min-height: 3.25rem;
@@ -85,7 +87,7 @@ html, body {
 }
 
 .navbar__right:hover {
-  border-top: 4px solid #fff;
+  border-top: 4px solid orangered;
 }
 
 .navbar__item,
@@ -94,11 +96,13 @@ html, body {
 }
 
 .navbar__logo {
+  color: orangered;
   font-size: 2rem;
+  font-weight: bold;
 }
 
 .navbar__logo a:hover {
-  color: orangered;
+  color: white;
 }
 
 .navbar a {
@@ -107,7 +111,7 @@ html, body {
 }
 
 .navbar__item:hover {
-  border-bottom: 4px solid orangered;
+  border-bottom: 4px solid white;
 }
 
 .box {
