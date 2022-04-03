@@ -1,22 +1,29 @@
-<h1><%= @user.name %></h1>
+<div class="section">
+  <div class="container">
+    <h1><%= @user.name %></h1>
 
-<h2>Events <%= @user.name %> is hosting</h2>
+    <h2>Events <%= @user.name %> is hosting</h2>
 
-<% @user.events.each do |event| %>
-  <div style="border-style: solid; margin-bottom: 10px">
-    <p>Title: <%= event.title %></p>
-    <p>Location: <%= event.location %></p>
-    <p>Date: <%= event.date %></p>
+    <div class="card-container">
+      <% @user.events.each do |event| %>
+        <div class="card">
+          <p>Title: <%= link_to event.title, event_path %></p>
+          <p>Location: <%= event.location %></p>
+          <p>Date: <%= event.date %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <h2>Events <%= @user.name %> is attending</h2>
+
+    <div class="card-container">
+      <% @user.invitations.includes(:event).each do |invite| %>
+        <div class="card">
+          <p>Title: <%= link_to invite.event.title, event_path %></p>
+          <p>Location: <%= invite.event.location %></p>
+          <p>Date: <%= invite.event.date %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
-
-<h2>Events <%= @user.name %> is attending</h2>
-
-<% @user.invitations.includes(:event).each do |invite| %>
-  <div style="border-style: solid; margin-bottom: 10px">
-    <p>Title: <%= invite.event.title %></p>
-    <p>Location: <%= invite.event.location %></p>
-    <p>Date: <%= invite.event.date %></p>
-  </div>
-
-<% end %>
+</div>
