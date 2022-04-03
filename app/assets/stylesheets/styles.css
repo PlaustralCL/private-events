@@ -129,20 +129,13 @@ html, body {
 
 .button {
   padding: 1rem;
-  background-color: orangered;
+  background-color: hsl(16, 100%, 50%);
   color: #000;
   border-radius: 4px;
 }
 
-.button a {
-  color: #000;
-}
-
-.button a:hover {
-  color: #fff;
-}
-
 .button:hover {
+  background-color:  hsl(16, 85%, 50%);;
   color: #fff;
 }
 
