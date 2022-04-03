@@ -235,8 +235,17 @@ a {
   flex-wrap: wrap;
 }
 
+.form-group--horizontal {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .form-group input[type="text"],
-.form-group input[type="email"] {
+.form-group input[type="email"],
+.form-group input[type="password"] {
   background-color: #ffffff;
   border: 1px solid #d6d9dc;
   border-radius: 3px;
@@ -253,7 +262,7 @@ a {
 }
 
 .form-group label {
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   font-weight: bold;
 }
 
@@ -271,4 +280,10 @@ a {
   color: #999999;
   font-size: 14px;
   margin-bottom: 30px;
+}
+
+.checkbox-label {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
