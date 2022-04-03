@@ -1,14 +1,29 @@
-<h1><%= @event.title %></h1>
+<div class="section">
+  <div class="container">
+    <div class="event-header">
+      <h1><%= @event.title %></h1>
+    </div>
 
-<p>Host: <%= link_to @event.creator.name, "/users/#{@event.creator_id}" %></p>
-<p>Location: <%= @event.location %></p>
-<p>Date: <%= @event.date %></p>
+    <div class="event-details">
+      <p>Host: <%= link_to @event.creator.name, "/users/#{@event.creator_id}" %></p>
+      <p>Location: <%= @event.location %></p>
+      <p>Date: <%= @event.date %></p>
+      <div class="event-description">
+        <%= @event.description %>
+      </div>
+    </div>
 
-<p><%= link_to "Register for this event", new_invitation_path(event_id: @event.id) %></p>
-<hr>
-<p>Attendees:</p>
-<% @event.attendees.each do |attendee| %>
-  <ul>
-    <li><%= link_to attendee.name, "/users/#{attendee.id}" %></li>
-  </ul>
-<% end %>
+    <%= link_to "Register for this event",
+                new_invitation_path(event_id: @event.id),
+                class: "button" %>
+    <hr>
+    <h2>Attendees:</h2>
+    <div class="attendance">
+      <% @event.attendees.each do |attendee| %>
+        <div class="event-attendee">
+          <%= link_to attendee.name, "/users/#{attendee.id}" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

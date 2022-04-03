@@ -15,13 +15,13 @@ html, body {
 }
 
 .container {
+  align-items: center;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   margin: 0 auto;
   position: reliative;
   width: auto;
-  border: 1px solid red;
 }
 
 @media (min-width: 1024px) {
@@ -125,6 +125,25 @@ html, body {
 
 .box:not(:last-child) {
   margin-bottom: 1.5rem;
+}
+
+.button {
+  padding: 1rem;
+  background-color: orangered;
+  color: #000;
+  border-radius: 4px;
+}
+
+.button a {
+  color: #000;
+}
+
+.button a:hover {
+  color: #fff;
+}
+
+.button:hover {
+  color: #fff;
 }
 
 .card {

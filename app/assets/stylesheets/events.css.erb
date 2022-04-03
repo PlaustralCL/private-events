@@ -1,3 +1,51 @@
 .hero {
   background: no-repeat center/100% url(<%= asset_path "crowd.jpg" %>);
 }
+
+.event-header,
+.event-details {
+  background-color: #f6f7f8;
+  border-radius: 3px;
+  border: 1px solid #d6d9dc;
+  margin: 1rem 0;
+  text-align: center;
+  width: 80%;
+}
+
+.event-header {
+  padding: 3rem;
+}
+
+.event-details {
+  padding: 1rem 3rem;
+}
+
+@media (min-width: 700px) {
+  .event-header,
+  .event-details {
+    width: 600px;
+  }
+}
+
+.event-description {
+  max-width: 400px;
+  text-align: left;
+  margin: auto;
+}
+
+.attendance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+}
+
+@media (min-width: 700px) {
+  .attendance {
+    width: 600px;
+  }
+}
+
+.event-attendee {
+  margin: 1rem;
+}
