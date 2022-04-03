@@ -162,6 +162,10 @@ html, body {
   }
 }
 
+.card a {
+  color: orangered;
+}
+
 .card:hover {
   border-color: orangered;
 }
@@ -197,4 +201,81 @@ a {
 .card__header {
   font-weight: bold;
   text-decoration: none;
+}
+
+.form-header {
+  text-align: center;
+  background-color: #f6f7f8;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+  width: 80%;
+  margin: 40px 0;
+  padding: 1rem 50px 1rem 50px;
+}
+
+.form-header h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.form {
+  background-color: #f6f7f8;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+  width: 80%;
+  padding: 50px;
+  margin: 0 0 40px 0;
+}
+
+@media only screen and (min-width: 700px) {
+  .form-header,
+  .form {
+    width: 600px;
+  }
+}
+
+.form-group {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  background-color: #ffffff;
+  border: 1px solid #d6d9dc;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  font-size: 1rem;
+}
+
+.form-group input[type="text"]:invalid,
+.form-group input[type="email"]:invalid {
+  border: 1px solid #d55c5f;
+  color:#d55c5f;
+  box-shadow: none;
+}
+
+.form-group label {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.form-group textarea {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 1rem;
+  border: 1px solid #d6d9dc;
+  min-height: 200px;
+  margin-bottom: 10px;
+  padding: 7px;
+  resize: none;
+}
+
+.form-group .instructions {
+  color: #999999;
+  font-size: 14px;
+  margin-bottom: 30px;
 }
