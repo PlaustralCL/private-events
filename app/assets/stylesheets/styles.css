@@ -227,7 +227,7 @@ a {
   }
 }
 
-.form-group {
+.field {
   margin-bottom: 40px;
   display: flex;
   justify-content: flex-start;
@@ -235,7 +235,7 @@ a {
   flex-wrap: wrap;
 }
 
-.form-group--horizontal {
+.field--horizontal {
   margin-bottom: 40px;
   display: flex;
   justify-content: flex-start;
@@ -243,9 +243,9 @@ a {
   flex-wrap: wrap;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="password"] {
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
   background-color: #ffffff;
   border: 1px solid #d6d9dc;
   border-radius: 3px;
@@ -254,19 +254,19 @@ a {
   font-size: 1rem;
 }
 
-.form-group input[type="text"]:invalid,
-.form-group input[type="email"]:invalid {
+.field input[type="text"]:invalid,
+.field input[type="email"]:invalid {
   border: 1px solid #d55c5f;
   color:#d55c5f;
   box-shadow: none;
 }
 
-.form-group label {
+.field label {
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
-.form-group textarea {
+.field textarea {
   font-family: "Helvetica", "Arial", sans-serif;
   font-size: 1rem;
   border: 1px solid #d6d9dc;
@@ -276,7 +276,7 @@ a {
   resize: none;
 }
 
-.form-group .instructions {
+.field .instructions {
   color: #999999;
   font-size: 14px;
   margin-bottom: 30px;
@@ -286,4 +286,8 @@ a {
   font-weight: bold;
   margin-bottom: 1rem;
   margin-left: 1rem;
+}
+
+.hint {
+  font-size: 1rem;
 }
