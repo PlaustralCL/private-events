@@ -6,9 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+# Data that will be used to seed the tables
 locations = %w[Monclair Redding Tiverton Clearfield Eastham Wyandotte Cushing Ridgewood Plainsfield]
 names = %w[Emma Olivia Ava Isabella Sophia Liam Noah James Logan]
-years = (2021..2031).to_a.map(&:to_s)
+future_years = (2022..2031).to_a.map(&:to_s)
+past_years = %w[2020 2021]
 months = (1..12).to_a.map(&:to_s).map { |month| month.rjust(2, "0") }
 days = (1..28).to_a.map(&:to_s).map { |day| day.rjust(2, "0") }
 event_names = %w[Equinox Soltice Spring Summer Winter Autumn Sun Snow Rain River Farm Flower Fruit Music Cow Duck Heritage Water Stone Fire]
@@ -28,20 +30,34 @@ users = names.each do |name|
               password_confirmation: "123456")
   end
 
-dates = []
-10.times do |i|
-  dates << "#{years.sample}-#{months.sample}-#{days.sample}"
+future_dates = []
+15.times do
+  future_dates << "#{future_years.sample}-#{months.sample}-#{days.sample}"
 end
 
-(1..10).each do |i|
+past_dates = []
+20.times do
+  past_dates << "#{past_years.sample}-#{months.sample}-#{days.sample}"
+end
+
+10.times do
   Event.create(title: "#{event_names.sample} #{event_types.sample}",
                location: "#{locations.sample}",
-               date: "#{dates.sample}",
+               date: "#{future_dates.sample}",
                description: "#{event_descriptions.sample}",
                creator_id: "#{User.all.to_a.sample.id}")
   end
 
-(1..30).each do |i|
+5.times do
+  Event.create(title: "#{event_names.sample} #{event_types.sample}",
+               location: "#{locations.sample}",
+               date: "#{past_dates.sample}",
+               description: "#{event_descriptions.sample}",
+               creator_id: "#{User.all.to_a.sample.id}")
+
+end
+
+35.times do
   Invitation.create(event_id: "#{Event.all.to_a.sample.id}",
                     attendee_id: "#{User.all.to_a.sample.id}")
-  end
+end
