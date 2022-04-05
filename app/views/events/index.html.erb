@@ -1,18 +1,29 @@
 <div class="hero">
   The time is now
 </div>
-
 <div class="section">
   <div class="container">
     <h2>Up coming events</h2>
     <div class="card-container">
-      <% @events.each do |event| %>
-        <div class="card">
-          <p class="card__header"><%= link_to event.title, event %></p>
+      <% @events.order(:date).each do |event| %>
+        <% if event.date >= Date.today %>
+          <div class="card">
+            <p class="card__header"><%= link_to event.title, event %></p>
             <p><%= event.location %></p>
             <p><%= event.date %></p>
           </div>
+        <% end %>
       <% end %>
     </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <h2>Past events</h2>
+      <% @events.order(date: :desc).each do |event| %>
+        <% if event.date < Date.today %>
+          <%= link_to "#{event.title} #{event.date}", event %>
+        <% end %>
+      <% end %>
   </div>
 </div>
