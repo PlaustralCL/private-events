@@ -7,7 +7,7 @@
     <div class="card-container">
       <% @user.events.each do |event| %>
         <div class="card">
-          <p>Title: <%= link_to event.title, event_path %></p>
+          <p>Title: <%= link_to event.title, event_path(event.id) %></p>
           <p>Location: <%= event.location %></p>
           <p>Date: <%= event.date %></p>
         </div>
@@ -17,13 +17,22 @@
     <h2>Events <%= @user.name %> is attending</h2>
 
     <div class="card-container">
-      <% @user.invitations.includes(:event).each do |invite| %>
+      <% @user.attended_events.each do |event| %>
         <div class="card">
-          <p>Title: <%= link_to invite.event.title, event_path %></p>
-          <p>Location: <%= invite.event.location %></p>
-          <p>Date: <%= invite.event.date %></p>
+          <p>Title: <%= link_to event.title, event_path(event.id) %></p>
+          <p>Location: <%= event.location %></p>
+          <p>Date: <%= event.date %></p>
         </div>
       <% end %>
     </div>
+
+    <h2>Past events attended</h2>
+    <div>
+      <% @user.attended_events.where("date < ?", Date.today).each do |event| %>
+        <div><%= link_to "#{event.title} #{event.date}", event %></div>
+      <% end %>
+
+    </div>
+
   </div>
 </div>
