@@ -17,7 +17,7 @@
     <h2>Events <%= @user.name %> is attending</h2>
 
     <div class="card-container">
-      <% @user.attended_events.each do |event| %>
+      <% @user.attended_events.where("date >= ?", Date.today).order(date: :asc).each do |event| %>
         <div class="card">
           <p>Title: <%= link_to event.title, event_path(event.id) %></p>
           <p>Location: <%= event.location %></p>
@@ -28,7 +28,7 @@
 
     <h2>Past events attended</h2>
     <div>
-      <% @user.attended_events.where("date < ?", Date.today).each do |event| %>
+      <% @user.attended_events.where("date < ?", Date.today).order(date: :desc).each do |event| %>
         <div><%= link_to "#{event.title} #{event.date}", event %></div>
       <% end %>
 
