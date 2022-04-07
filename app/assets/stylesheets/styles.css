@@ -128,10 +128,11 @@ html, body {
 }
 
 .button {
-  padding: 1rem;
   background-color: hsl(16, 100%, 50%);
-  color: #000;
   border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+  padding: .5rem 1rem .5rem 1rem;
 }
 
 .button:hover {
@@ -196,6 +197,26 @@ a {
   text-decoration: none;
 }
 
+.notification {
+  position: relative;
+  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+}
+
+.notification--success {
+  background-color: #00D1B2;
+  color: #fff;
+}
+
+.notification--alert {
+  background-color: #F14668;
+  color: #fff;
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
+
+/**** Forms ****/
 .form-header {
   text-align: center;
   background-color: #f6f7f8;
@@ -228,11 +249,11 @@ a {
 }
 
 .field {
-  margin-bottom: 40px;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 40px;
 }
 
 .field--horizontal {
@@ -247,11 +268,12 @@ a {
 .field input[type="email"],
 .field input[type="password"] {
   background-color: #ffffff;
-  border: 1px solid #d6d9dc;
   border-radius: 3px;
+  border: 1px solid #d6d9dc;
+  height: 2.5rem;
+  line-height: 1.5;
+  padding: .5rem 1rem .5rem 1rem;
   width: 100%;
-  padding: 7px;
-  font-size: 1rem;
 }
 
 .field input[type="text"]:invalid,
