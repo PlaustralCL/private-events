@@ -3,11 +3,7 @@ class Event < ApplicationRecord
   has_many :invitations
   has_many :attendees, through: :invitations, source: :attendee
 
-  def self.future
-    where("date >= ?", Date.today).order(date: :asc)
-  end
+  scope :future, -> { where("date >= ?", Date.today).order(date: :asc) }
+  scope :past, -> { where("date < ?", Date.today).order(date: :desc) }
 
-  def self.past
-    where("date < ?", Date.today).order(date: :desc)
-  end
 end
