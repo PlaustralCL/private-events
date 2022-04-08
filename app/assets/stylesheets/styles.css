@@ -92,6 +92,7 @@ html, body {
 
 .navbar__item,
 .navbar__logo {
+  color: #fff;
   padding: 0.5rem 0.75rem;
 }
 
@@ -102,12 +103,12 @@ html, body {
 }
 
 .navbar__logo a:hover {
-  color: white;
+  color: #000;
 }
 
 .navbar a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 .navbar__item:hover {
@@ -130,7 +131,7 @@ html, body {
 .button {
   background-color: hsl(16, 100%, 50%);
   border-radius: 4px;
-  color: #000;
+  color: #fff;
   cursor: pointer;
   padding: .5rem 1rem .5rem 1rem;
 }

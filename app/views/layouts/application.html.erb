@@ -32,6 +32,10 @@
       <div class="navbar__right">
         <% if user_signed_in? %>
           <div class="navbar__item">
+            <%= link_to "New Event",
+                        new_event_path %>
+          </div>
+          <div class="navbar__item">
             <%= link_to current_user.name,
                         current_user %>
           </div>
@@ -39,10 +43,6 @@
             <%= link_to "Log out",
                         destroy_user_session_path,
                         method: :delete %>
-          </div>
-          <div class="navbar__item">
-            <%= link_to "New Event",
-                        new_event_path %>
           </div>
         <% else %>
           <div class="navbar__item">
