@@ -13,12 +13,12 @@
   <body>
     <% if flash[:notice] %>
       <div class="notification notification--success">
-        <p><%= notice %></p>
+        <%= notice %>
       </div>
     <% end %>
     <% if flash[:alert] %>
       <div class="notification notification--alert">
-        <p><%= alert %></p>
+        <%= alert %>
       </div>
     <% end %>
 
