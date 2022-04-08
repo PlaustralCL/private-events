@@ -27,6 +27,10 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    unless current_user.id == @event.creator_id
+      redirect_to @event,
+                  alert: "You can only edit events you created"
+    end
   end
 
   def update
@@ -37,6 +41,13 @@ class EventsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+
+    redirect_to root_path, status: :see_other
   end
 
   private
