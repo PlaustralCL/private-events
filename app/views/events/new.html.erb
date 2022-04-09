@@ -3,6 +3,7 @@
     <div class="form-header">
       <h1>New Event</h1>
     </div>
-    <%= render "form", event: @event %>
+    <%= render "form", locals: {event: @event, users: @users} %>
+
   </div>
 </div>

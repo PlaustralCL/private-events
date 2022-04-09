@@ -13,10 +13,16 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.new
+    @users = User.all.order(:name)
   end
 
   def create
-    @event = current_user.events.build(event_params)
+    # @event = current_user.events.build(event_params)
+    @event = current_user.events.build(title: event_params[:title],
+                                       location: event_params[:location],
+                                       date: event_params[:date],
+                                       description: event_params[:description],
+                                       attendees: event_params[:attendees].map { |id| User.find(id) })
 
     if @event.save
       redirect_to @event
@@ -27,6 +33,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    @users = User.all.order(:name)
     unless current_user.id == @event.creator_id
       redirect_to @event,
                   alert: "You can only edit events you created"
@@ -53,6 +60,5 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :location, :description, :date)
+    params.require(:event).permit(:title, :location, :description, :date, {:attendees => []})
   end
-end
