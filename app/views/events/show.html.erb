@@ -14,9 +14,16 @@
     </div>
 
     <% if user_signed_in? && current_user.id == @event.creator_id %>
-      <%= link_to "Update this event",
-                  edit_event_path,
-                  class: "button" %>
+      <div class="buttons">
+        <%= link_to "Update this event",
+                    edit_event_path,
+                    class: "button" %>
+        <%= link_to "Delete event",
+                    event_path(@event),
+                    data: { turbo_method: :delete,
+                            turbo_confirm: "Are you sure?" },
+                    class: "button" %>
+      </div>
       <% else %>
         <%= link_to "Register for this event",
                     new_invitation_path(event_id: @event.id),
