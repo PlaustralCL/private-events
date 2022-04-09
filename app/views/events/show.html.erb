@@ -30,9 +30,13 @@
                     data: { turbo_method: :delete,
                             turbo_confirm:"Are you sure?" },
                     class: "button" %>
-      <% else %>
+      <% elsif user_signed_in? %>
         <%= link_to "Register for this event",
                     new_invitation_path(event_id: @event.id),
+                    class: "button" %>
+      <% else %>
+        <%= link_to "Log in to register for this event",
+                    new_user_session_path,
                     class: "button" %>
       <% end %>
 
