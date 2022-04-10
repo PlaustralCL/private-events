@@ -8,9 +8,10 @@
       <% @future_events.order(:date).each do |event| %>
         <% if event.date >= Date.today %>
           <div class="card">
-            <p class="card__header"><%= link_to event.title, event %></p>
-            <p><%= event.location %></p>
-            <p><%= event.date %></p>
+            <div class="card__header"><%= event.title %></div>
+            <div class="card__item"><%= event.location %></div>
+            <div class="card__item"><%= event.date %></div>
+            <%= link_to "Event details", event, class: "button--outline" %>
           </div>
         <% end %>
       <% end %>

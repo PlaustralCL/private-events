@@ -7,9 +7,10 @@
     <div class="card-container">
       <% @user.events.each do |event| %>
         <div class="card">
-          <p>Title: <%= link_to event.title, event_path(event.id) %></p>
-          <p>Location: <%= event.location %></p>
-          <p>Date: <%= event.date %></p>
+          <div class="card__header"><%= event.title %></div>
+          <div class="card__item"><%= event.location %></div>
+          <div class="card__item"><%= event.date %></div>
+          <%= link_to "Event details", event, class: "button--outline" %>
         </div>
       <% end %>
     </div>
@@ -19,9 +20,10 @@
     <div class="card-container">
       <% @user.attended_events.where("date >= ?", Date.today).order(date: :asc).each do |event| %>
         <div class="card">
-          <p>Title: <%= link_to event.title, event_path(event.id) %></p>
-          <p>Location: <%= event.location %></p>
-          <p>Date: <%= event.date %></p>
+          <div class="card__header"><%= event.title %></div>
+          <div class="card__item"><%= event.location %></div>
+          <div class="card__item"><%= event.date %></div>
+          <%= link_to "Event details", event, class: "button--outline" %>
         </div>
       <% end %>
     </div>

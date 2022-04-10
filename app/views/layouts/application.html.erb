@@ -29,7 +29,7 @@
                       root_path %>
         </div>
       </div>
-      <div class="navbar__right">
+      <div class="navbar__menu">
         <% if user_signed_in? %>
           <div class="navbar__item">
             <%= link_to "New Event",
@@ -54,6 +54,11 @@
                         new_user_registration_path %>
           </div>
         <% end %>
+        <a class="navbar__burger">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
     </nav>
 

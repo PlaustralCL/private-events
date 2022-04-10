@@ -1,8 +1,4 @@
 class InvitationsController < ApplicationController
-  def new
-    @invitation =  Invitation.new(event_id: params[:event_id], attendee_id: current_user.id)
-  end
-
   def create
     @invitation = Invitation.new(invitation_params)
 
