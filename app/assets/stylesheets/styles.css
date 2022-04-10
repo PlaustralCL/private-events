@@ -320,3 +320,27 @@ a {
 .hint {
   font-size: 1rem;
 }
+
+.checkbox-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (min-width: 700px) {
+  .checkbox-list {
+    justify-content: center;
+  }
+}
+
+.checkbox-list__label {
+  margin-left: .5rem;
+}
+
+.checkbox-list__field {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 1rem;
+}

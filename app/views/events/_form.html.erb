@@ -22,11 +22,19 @@
 
 
 
-    <%= form.collection_check_boxes :attendee_ids,
-                                    @users,
-                                    :id,
-                                    :name,
-                                    { include_hidden: false } %>
+    <div class="checkbox-list">
+      <%= form.collection_check_boxes(:attendee_ids,
+                                      @users,
+                                      :id,
+                                      :name,
+                                      { include_hidden: false }) do |b| %>
+        <div class="checkbox-list__field">
+          <%= b.check_box %>
+          <%= b.label(class: "checkbox-list__label") %>
+        </div>
+      <% end %>
+
+    </div>
 
     <%= form.submit class: "button" %>
   <% end %>
