@@ -31,9 +31,12 @@
                             turbo_confirm:"Are you sure?" },
                     class: "button" %>
       <% elsif user_signed_in? %>
-        <%= link_to "Register for this event",
-                    new_invitation_path(event_id: @event.id),
-                    class: "button" %>
+        <%= form_with model: @invitation do |form| %>
+          <%= form.hidden_field :attendee_id, value: current_user.id %>
+          <%= form.hidden_field :event_id, value: @event.id %>
+          <%= form.submit "Register for this event",
+                          class: "button" %>
+        <% end %>
       <% else %>
         <%= link_to "Log in to register for this event",
                     new_user_session_path,
