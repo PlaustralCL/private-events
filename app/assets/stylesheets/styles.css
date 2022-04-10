@@ -90,15 +90,41 @@ html, body {
   justify-content: flex-start;
 }
 
-.navbar__right {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  height: 100%;
+.navbar__menu .navbar__item {
+  display: none;
 }
 
-.navbar__right:hover {
-  border-top: 4px solid var(--primary);
+.navbar__burger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar__burger span {
+  border: 1px solid #fff;
+  margin: 2px;
+  width: 16px;
+}
+
+@media (min-width: 700px) {
+  .navbar__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  .navbar__menu .navbar__item {
+    display: block;
+  }
+
+  .navbar__menu:hover {
+    border-top: 4px solid var(--primary);
+  }
+
+  .navbar__burger {
+    display: none;
+  }
 }
 
 .navbar__item,
