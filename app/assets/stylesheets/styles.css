@@ -66,6 +66,7 @@ html, body {
   font-weight: bold;
   justify-content: center;
   min-height: 20vh;
+  text-align: center;
 }
 
 @media (min-width: 760px) {
