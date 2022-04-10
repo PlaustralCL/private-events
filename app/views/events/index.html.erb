@@ -20,10 +20,12 @@
 <div class="section">
   <div class="container">
     <h2>Past events</h2>
-      <% @past_events.each do |event| %>
-        <% if event.date < Date.today %>
-          <%= link_to "#{event.title} #{event.date}", event %>
+      <ul class="event-list">
+        <% @past_events.each do |event| %>
+          <% if event.date < Date.today %>
+            <li><%= link_to "#{event.title} #{event.date}", event %></li>
+          <% end %>
         <% end %>
-      <% end %>
+      </ul>
   </div>
 </div>
