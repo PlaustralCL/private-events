@@ -254,10 +254,6 @@ a {
   text-decoration: none;
 }
 
-.card__item {
-  /* margin: .5rem; */
-}
-
 .notification {
   position: relative;
   padding: 1.25rem 2.5rem 1.25rem 1.5rem;
@@ -396,6 +392,10 @@ a {
   border: 1px solid #d55c5f;
   color:#d55c5f;
   box-shadow: none;
+}
+
+::placeholder {
+  color: #bbbbbb;
 }
 
 .field label {

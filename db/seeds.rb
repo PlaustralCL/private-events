@@ -29,12 +29,19 @@ def event_descriptions
 end
 
 def create_users
-names = %w[Emma Olivia Ava Isabella Sophia Liam Noah James Logan]
-users = names.each do |name|
-  User.create(name: "#{name}",
-              email: "#{name}@email.com",
-              password: "123456",
-              password_confirmation: "123456")
+  names = %w[Baldr Emma Olivia Ava Isabella Sophia Liam Noah James Logan]
+  users = names.each do |name|
+    if name == "Baldr"
+      User.create(name: "#{name}",
+                  email: "user@example.com",
+                  password: "password",
+                  password_confirmation: "password")
+    else
+      User.create(name: "#{name}",
+                  email: "#{name}@email.com",
+                  password: "#{name[0..2].downcase.each_char.map { |c| c.ord }.join }",
+                  password_confirmation: "#{name[0..2].downcase.each_char.map { |c| c.ord }.join }")
+    end
   end
 end
 
