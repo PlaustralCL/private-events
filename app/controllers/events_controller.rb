@@ -17,13 +17,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    # @event = current_user.events.build(event_params)
-    @event = current_user.events.build(title: event_params[:title],
-                                       location: event_params[:location],
-                                       date: event_params[:date],
-                                       description: event_params[:description],
-                                       attendees: event_params[:attendees].map { |id| User.find(id) })
-
+    @event = current_user.events.build(event_params)
     if @event.save
       redirect_to @event
     else
@@ -42,7 +36,6 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-
     if @event.update(event_params)
       redirect_to @event
     else
@@ -60,5 +53,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :location, :description, :date, {:attendees => []})
+    params.require(:event).permit(:title, :location, :description, :date, {:attendee_ids => []})
   end
+end
