@@ -1,5 +1,6 @@
 /**** Layout *****/
 html, body {
+  background-color: #FFF5ED;
   margin: 0;
   padding: 0;
 }
@@ -148,9 +149,30 @@ html, body {
   color: #fff;
 }
 
-.card {
-  border: 2px solid rgb(224, 224, 224);
+.button--outline {
+  background-color: #fff;
+  /* border: 1px solid orangered; */
+  border: 1px solid orangered;
   border-radius: 4px;
+  color: orangered;
+  cursor: pointer;
+  margin: .5rem;
+  padding: .5rem 1rem .5rem 1rem;
+  text-align: center;
+}
+
+.button--outline:hover {
+  background-color: orangered;
+  color:#fff;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid #DC9C85;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   margin: 1.5rem;
   min-width: 16rem;
   padding: 1rem;
@@ -162,14 +184,6 @@ html, body {
   .card {
     min-width: 18rem;
   }
-}
-
-.card a {
-  color: orangered;
-}
-
-.card:hover {
-  border-color: orangered;
 }
 
 .card:not(:last-child) {
@@ -203,6 +217,10 @@ a {
 .card__header {
   font-weight: bold;
   text-decoration: none;
+}
+
+.card__item {
+  /* margin: .5rem; */
 }
 
 .notification {
