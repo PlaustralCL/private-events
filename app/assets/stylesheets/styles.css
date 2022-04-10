@@ -5,12 +5,12 @@ html, body {
 }
 
 .section {
-  padding: 3rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding: 3rem 3rem;
+    padding: 1.5rem 3rem;
   }
 }
 
