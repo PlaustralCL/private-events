@@ -1,6 +1,6 @@
 # Private Events
 
-This project builds a site similar to a private [Eventbrite]() which allows users to create events and manager user signups. This is part of [The Odin Project](https://www.theodinproject.com/lessons/ruby-on-rails-private-events).
+This project builds a site similar to a private [Eventbrite](https://www.eventbrite.com/) which allows users to create events and manager user signups. This is part of [The Odin Project](https://www.theodinproject.com/lessons/ruby-on-rails-private-events).
 
 Key Features:
 - Show a list of all events, sorted into future and past events
