@@ -9,6 +9,6 @@ Key Features:
 - Allow specific users to be invited to the event when it is created
 - Edit events, including who is invited
 
-A live demo of the site is on [Heroku](). If you wish to try the features without creating a new user you can use the following:
+A live demo of the site is on [Heroku](https://ancient-lowlands-33809.herokuapp.com/). If you wish to try the features without creating a new user you can use the following:
 - email: user@example.com
 - password: password
