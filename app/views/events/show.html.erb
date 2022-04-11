@@ -24,7 +24,7 @@
                             turbo_confirm: "Are you sure?" },
                     class: "button" %>
       </div>
-      <% elsif user_signed_in? && current_user.invitations.where("cast(event_id as integer) = ?", @event.id).exists? %>
+      <% elsif user_signed_in? && current_user.invitations.where("event_id = ?", @event.id).exists? %>
         <%= link_to "Decline Event",
                     invitation_path(current_user.invitations.where("event_id = ?", @event.id).first.id),
                     data: { turbo_method: :delete,
