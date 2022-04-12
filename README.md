@@ -9,6 +9,13 @@ Key Features:
 - Allow specific users to be invited to the event when it is created
 - Edit events, including who is invited
 
-A live demo of the site is on [Heroku](https://ancient-lowlands-33809.herokuapp.com/). If you wish to try the features without creating a new user you can use the following:
+A [live demo](https://ancient-lowlands-33809.herokuapp.com/) of the site is on Heroku. If you wish to try the features without creating a new user you can use the following:
 - email: user@example.com
 - password: password
+
+
+## Acknowledgements
+- Much thanks to Nick Francisci for his helpful explanation on [setting up Devise to work properly with Rails 7](https://betterprogramming.pub/devise-auth-setup-in-rails-7-44240aaed4be)
+
+- The photo on the front page is by [Vishnu R Nair](https://unsplash.com/@vishnurnair?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
