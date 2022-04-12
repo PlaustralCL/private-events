@@ -5,6 +5,7 @@
   --primary: #FF4500;
   --secondary: #DC9C85;
   --alert: #BC388E;
+  --alert-bg: #FFB2FF;
   --success: #00D1B2;
 }
 
@@ -377,6 +378,16 @@ a {
 .error-message {
   color: var(--alert);
   font-weight: bold;
+}
+
+#error_explanation {
+  border: 3px solid var(--alert);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+#error_explanation h2 {
+  background-color: var(--alert-bg);
 }
 
 .field--horizontal {
