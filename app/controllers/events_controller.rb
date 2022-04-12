@@ -14,7 +14,6 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.new
-    @users = User.all.order(:name)
   end
 
   def create
@@ -22,13 +21,12 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to @event
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def edit
     @event = Event.find(params[:id])
-    @users = User.all.order(:name)
     unless current_user.id == @event.creator_id
       redirect_to @event,
                   alert: "You can only edit events you created"

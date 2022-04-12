@@ -369,6 +369,16 @@ a {
   margin-bottom: 1.5rem;
 }
 
+.field_with_errors input[type="text"],
+.field_with_errors input[type="date"] {
+  width: 95%;
+}
+
+.error-message {
+  color: var(--alert);
+  font-weight: bold;
+}
+
 .field--horizontal {
   margin-bottom: 40px;
   display: flex;

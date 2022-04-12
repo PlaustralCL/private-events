@@ -3,16 +3,25 @@
     <div class="field">
       <%= form.label :title, "Event Title: " %>
       <%= form.text_field :title, autofocus: true %>
+      <% @event.errors.full_messages_for(:title).each do |message| %>
+        <div class="error-message"><%= message %></div>
+      <% end %>
     </div>
 
     <div class="field">
       <%= form.label :location, "Location: " %>
       <%= form.text_field :location %>
+      <% @event.errors.full_messages_for(:location).each do |message| %>
+        <div class="error-message"><%= message %></div>
+      <% end %>
     </div>
 
     <div class="field">
       <%= form.label :date, "Date: " %>
       <%= form.date_field :date %>
+      <% @event.errors.full_messages_for(:date).each do |message| %>
+        <div class="error-message"><%= message %></div>
+      <% end %>
     </div>
 
     <div class="field">
@@ -20,11 +29,9 @@
       <%= form.text_area :description %>
     </div>
 
-
-
     <div class="checkbox-list">
       <%= form.collection_check_boxes(:attendee_ids,
-                                      @users,
+                                      User.all.order(:name),
                                       :id,
                                       :name,
                                       { include_hidden: false }) do |b| %>
@@ -35,6 +42,7 @@
       <% end %>
 
     </div>
+
 
     <%= form.submit class: "button" %>
   <% end %>
