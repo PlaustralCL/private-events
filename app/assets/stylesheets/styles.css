@@ -103,6 +103,10 @@ html, body {
   cursor: pointer;
 }
 
+.navbar__burger:hover span {
+  border: 1px solid #000;
+}
+
 .navbar__x {
   display: none;
 }
