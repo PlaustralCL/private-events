@@ -8,6 +8,7 @@ Key Features:
 - Show all of the events that a user is hosting or attending
 - Allow specific users to be invited to the event when it is created
 - Edit events, including who is invited
+- Use Stimulus to make the menu interactive on mobile
 
 A [live demo](https://ancient-lowlands-33809.herokuapp.com/) of the site is on Heroku. If you wish to try the features without creating a new user you can use the following:
 - email: user@example.com
