@@ -29,37 +29,44 @@
                       root_path %>
         </div>
       </div>
-      <div class="navbar__menu">
-        <% if user_signed_in? %>
-          <div class="navbar__item">
-            <%= link_to "New Event",
-                        new_event_path %>
-          </div>
-          <div class="navbar__item">
-            <%= link_to current_user.name,
-                        current_user %>
-          </div>
-          <div class="navbar__item">
-            <%= link_to "Log out",
-                        destroy_user_session_path,
-                        method: :delete %>
-          </div>
-        <% else %>
-          <div class="navbar__item">
-            <%= link_to "Log in",
-                        new_user_session_path %>
-          </div>
-          <div class="navbar__item">
-            <%= link_to "Sign up",
-                        new_user_registration_path %>
-          </div>
-        <% end %>
-        <a class="navbar__burger">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+
+
+      <div class="is-active">
+        <div class="navbar__menu">
+          <div class="navbar__x">X</div>
+            <a class="navbar__burger">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          <% if user_signed_in? %>
+            <div class="navbar__item">
+              <%= link_to "New Event",
+                          new_event_path %>
+            </div>
+            <div class="navbar__item">
+              <%= link_to current_user.name,
+                          current_user %>
+            </div>
+            <div class="navbar__item">
+              <%= link_to "Log out",
+                          destroy_user_session_path,
+                          method: :delete %>
+            </div>
+          <% else %>
+            <div class="navbar__item">
+              <%= link_to "Log in",
+                          new_user_session_path %>
+            </div>
+            <div class="navbar__item">
+              <%= link_to "Sign up",
+                          new_user_registration_path %>
+            </div>
+          <% end %>
+        </div>
       </div>
+
+
     </nav>
 
     <%= yield %>

@@ -92,6 +92,7 @@ html, body {
   justify-content: flex-start;
 }
 
+
 .navbar__menu .navbar__item {
   display: none;
 }
@@ -100,6 +101,35 @@ html, body {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+}
+
+.navbar__x {
+  display: none;
+}
+
+.is-active .navbar__x {
+  align-self:flex-end;
+  color: #FFFFFF;
+  display: block;
+  padding: 4px 8px 4px 4px;
+}
+
+.is-active .navbar__menu {
+  align-items: center;
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.is-active .navbar__menu .navbar__item {
+  display: block;
+}
+
+.is-active .navbar__burger {
+  display: none;
 }
 
 .navbar__burger span {
