@@ -114,6 +114,12 @@ html, body {
   padding: 4px 8px 4px 4px;
 }
 
+.is-active .navbar__x:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+
 .is-active .navbar__menu {
   align-items: center;
   background-color: var(--primary);
@@ -182,6 +188,14 @@ html, body {
 
 .navbar__item:hover {
   border-bottom: 4px solid white;
+}
+
+.is-active .navbar__item:hover {
+  border: none;
+}
+
+.is-active .navbar__item a:hover {
+  color: black;
 }
 
 .box {

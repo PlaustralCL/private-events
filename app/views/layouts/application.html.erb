@@ -31,10 +31,13 @@
       </div>
 
 
-      <div class="is-active">
+      <div data-controller="navbar"
+           data-navbar-open-class="is-active">
         <div class="navbar__menu">
-          <div class="navbar__x">X</div>
-            <a class="navbar__burger">
+          <div data-action="click->navbar#close"
+               class="navbar__x">X</div>
+            <a data-action="click->navbar#open"
+               class="navbar__burger">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
